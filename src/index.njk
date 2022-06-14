@@ -6,3 +6,11 @@
   <button type="submit" name="provider" value="slack">Login with Slack</button>
   <button type="submit" name="provider" value="linkedin">Login with Linkedin</button>
 </form>
+
+<h3>collections.all:</h3>
+{{ collections.all | log }}
+<ul>
+{%- for post in collections.all -%}
+  <li>{{ post.url }}</li>
+{%- endfor -%}
+</ul>

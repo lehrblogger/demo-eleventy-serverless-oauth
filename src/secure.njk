@@ -8,6 +8,14 @@ secure:
 
 {% include "logout.njk" %}
 
+{{ collections.all | log }}
+<h3>collection.all:</h3>
+<ul>
+{%- for post in collections.all -%}
+  <li>{{ post.url }}</li>
+{%- endfor -%}
+</ul>
+
 <img src="{{ user.avatar_url or user.avatar or user.picture or user["profilePicture"]["displayImage~"]["elements"][0]["identifiers"][0]["identifier"] }}" alt="Avatar for {{ user.name or user.full_name or user.localizedFirstName }}">
 
 <h3>Your user information:</h3>
